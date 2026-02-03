@@ -21,7 +21,7 @@ public class VctiemsApplication {
             String ifDescrOID = "1.3.6.1.2.1.2.2.1.2";
 
             client.snmpWalk(ifDescrOID).forEach(System.out::println);
-            
+
             client.snmpWalk(ifTypeOID).forEach(System.out::println);
 
 
