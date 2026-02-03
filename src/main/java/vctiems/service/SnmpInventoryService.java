@@ -13,7 +13,7 @@ public class SnmpInventoryService {
 
     public DeviceInventory collectInventory() throws Exception {
 
-        String ip = "127.0.0.1";
+        String ip = "172.30.0.1";
         String community = "public";
 
         SnmpClient client = new SnmpClient(ip, community);
