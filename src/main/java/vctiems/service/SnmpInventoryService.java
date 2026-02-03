@@ -1,5 +1,6 @@
 package vctiems.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import vctiems.model.DeviceInventory;
 import vctiems.model.InterfaceInfo;
@@ -11,10 +12,14 @@ import java.util.List;
 @Service
 public class SnmpInventoryService {
 
-    public DeviceInventory collectInventory() throws Exception {
+    @Value("${snmp.host}")
+    private String ip;
 
-        String ip = "172.30.0.1";
-        String community = "public";
+    @Value("${snmp.community}")
+    private String community;
+
+
+    public DeviceInventory collectInventory() throws Exception {
 
         SnmpClient client = new SnmpClient(ip, community);
 
